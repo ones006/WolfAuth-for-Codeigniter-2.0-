@@ -9,11 +9,11 @@
 * @link http://ilikekillnerds.com
 */
 
-class Auth_facebook extends CI_Driver {
+class Auth_twitter extends CI_Driver {
     
     public function index()
     {
-         echo "Hello Facebook!";
+         echo "Hello Twitter!";
     }
 
  }
