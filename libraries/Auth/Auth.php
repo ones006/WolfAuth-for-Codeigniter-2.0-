@@ -7,13 +7,12 @@ class Auth extends CI_Driver_Library {
     *
     * @var mixed
     */
-    protected $_config = array(
-
+    protected $_config = array
+    (
         'method'          => 'username',
         'password_length' => 8,
         'guest_role'      => 'Guest',
         'default_role'    => 'User'
-
     );
 
     /**
@@ -21,35 +20,60 @@ class Auth extends CI_Driver_Library {
     *
     * @var mixed
     */
-    protected $_roles = array(
-
-        'Guest' => array(
+    protected $_roles = array
+    (
+        'Guest' => array
+        (
             'role_id' => 0,
             'role_description' => 'A non logged in user'
         ),
-        'User' => array(
+        'User' => array
+        (
             'role_id' => 1,
             'role_description' => 'Just a standard user'
         ),
-        'Admin' => array(
+        'Admin' => array
+        (
             'role_id' => 10,
             'role_description' => 'A super administrator'
-        ),
-
+        )
     );
+
+    /**
+    * Our default adapter a.k.a driver is simpleauth
+    *
+    * @var mixed
+    */
+    protected $_adapter = "simpleauth";
 
     /**
     * Info about the current session / user
     *
     * @var mixed
     */
-    protected $_auth_info = array(
-
+    protected $_auth_info = array
+    (
         'username',
         'user_id',
-        'role_id',
-
+        'role_id'
     );
+
+    /**
+    * Database tables
+    *
+    * @var mixed
+    */
+    protected $_tables = array
+    (
+        'users'     => 'users',
+        'user_meta' => 'usermeta',
+        'roles'     => 'roles'
+    );
+
+    protected $meta_fields = NULL;
+
+    protected $error_array = array();
+    protected $message_array = array();
 
     /**
     * Codeigniter instance
